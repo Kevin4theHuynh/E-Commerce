@@ -121,6 +121,14 @@ router.delete('/:id', (req, res) => {
       id: req.params.id,
     },
   })
+  .then((products) => {
+    console.log(products);
+    res.json(products)
+  })
+  .catch((err) => {
+    console.log(err)
+    res.status(400).json(err)
+  })
 });
 
 module.exports = router;
